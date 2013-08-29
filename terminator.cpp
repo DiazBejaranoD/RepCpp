@@ -1,12 +1,6 @@
-// - MotorControl simple -
-// This simple example creates a MotorControl handle, hooks the event handlers, then opens and waits for a MotorControl Phidget to be attached.
-// Once on has been attaced it will display device information and display any event data read.  The program will then do a short simulation
-// of the functionality of the motor by increasing and decreasing the speed of an attached motor.  PLEASE NOTE:  This assignment
-// was desgined assuming only one motor attached at motor index 0 (for motorcontrol boards with multiple motors).
-//
-// Copyright 2008 Phidgets Inc.  All rights reserved.
-// This work is licensed under the Creative Commons Attribution 2.5 Canada License. 
-// view a copy of this license, visit http://creativecommons.org/licenses/by/2.5/ca/
+/* Autonomous robot, Elimia
+ * Author. Daniel Díaz Bejarano
+ */
 
 #include <stdio.h>
 #include <libpowerbutton.h>
@@ -1992,6 +1986,8 @@ void *box_detection(void *threadid){
 	pthread_exit(NULL);
 }
 
+/* MAIN 
+ HERE all the threads are spawn using pthread_t*/
 
 int main(int argc, char* argv[])
 {
@@ -2025,7 +2021,6 @@ int main(int argc, char* argv[])
         	//printf("Button pressed %i times.\n",power_button_get_value());
    	 }
 
-	
       pthread_t matches_thread,motor_thread,camera_thread,show_thread, box_thread;
       int name=1;
       int mt;
